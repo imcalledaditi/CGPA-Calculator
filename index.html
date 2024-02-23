@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+	<title>CGPA Calculator 🖩</title> 
+	<link rel="stylesheet" href="style.css"> 
+</head> 
+
+<body> 
+    <!--<div class = "container">-->
+	<div id="calculator"> 
+		<span id="creditError" class="error"></span> 
+		<span id="inputError" class="error"></span> 
+		<br> 
+		<h2>CGPA Calculator</h2> 
+		<form id="cgpaForm"> 
+
+        
+
+			<label for="subject">Subject:</label> 
+			<input type="text" id="subject" required> 
+
+			<label for="grade">Grade:</label> 
+			<select id="grade"> 
+				<option value="O">O</option> 
+				<option value="A">A+</option>
+                <option value="A">A</option> 
+				<option value="B">B+</option>
+                <option value="B">B</option>
+				<option value="C">C</option> 
+				<option value="D">P</option> 
+				<option value="F">F</option>
+                <option value="B">A</option>
+                <option value="B">I</option>
+			</select> 
+
+			<label for="credit">Credit:</label> 
+			<input type="number" id="credit" min="1" required> 
+
+			<button type="button" onclick="addSubject()"> 
+				Add / Edit Subject 
+			</button> 
+		</form> 
+		<h3>Calculate CGPA</h3> 
+		<table id="subjectTable"> 
+			<thead> 
+				<tr> 
+					<th>Subject</th> 
+					<th>Grade</th> 
+					<th>Credit</th> 
+					<th>Action</th> 
+				</tr> 
+			</thead> 
+			<tbody id="subjectList"></tbody> 
+		</table> 
+
+		<h3>CGPA: <span id="cgpa">0.00</span></h3> 
+
+		<button type="button" onclick="calculateCGPA()"> 
+			Calculate CGPA 
+		</button> 
+		<button type="button" onclick="resetForm()"> 
+			Reset 
+		</button> 
+	</div> 
+<!--</div>-->
+	<script src="script.js"></script> 
+
+</body> 
+
+</html>
